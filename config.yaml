@@ -1,6 +1,6 @@
 # https://developers.home-assistant.io/docs/add-ons/configuration#add-on-config
 name: SPC
-version: "1.2.1"
+version: "1.2.2"
 slug: spc
 description: Plugin to read SPC data without SPC Web Gateway
 url: "https://github.com/Sandr0x00/ha-spc/tree/main"
@@ -11,10 +11,6 @@ arch:
   - amd64
   - i386
 init: false
-map:
-  - share:rw
-options:
-  message: "Hello world..."
-schema:
-  message: "str?"
-image: "ghcr.io/home-assistant/{arch}-addon-example"
+startup: services
+ports:
+  50123/tcp: 50123
